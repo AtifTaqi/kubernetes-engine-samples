@@ -14,12 +14,12 @@ jobs:
   job:
     runs-on: ubuntu-20.04
     steps:
-      #- uses: actions/checkout@v3
-      #- name: build hello-app-tls container
-        #run: |
-        #  cd hello-app-tls
-         # docker build --tag hello-app-tls .          
-  
+      - uses: actions/checkout@v3
+      - name: build hello-app-tls container
+        run: |
+          cd hello-app-tls
+          docker build --tag hello-app-tls .
+          
       - name: Login to image repository
         if: github.ref_type == 'tag'
         uses: docker/login-action@v2
